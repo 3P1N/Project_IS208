@@ -14,7 +14,7 @@ export const ProjectAgreementPage = () => {
   const [pdfFailed, setPdfFailed] = useState(false)
 
   // Sample PDF URL - replace with your actual PDF
-  const pdfUrl = "/Introduce/HopDong.pdf"
+  const pdfUrl = "/Project_IS208/HopDong.pdf"
 
   // Check if device is mobile for UI adjustments
   useEffect(() => {

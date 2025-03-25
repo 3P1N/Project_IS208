@@ -16,7 +16,7 @@ const featuredProject = {
     "Hệ thống báo cáo toàn diện",
     "Xác thực bảo mật và kiểm soát truy cập",
   ],
-  image: "/Introduce/WareHouse.avif",
+  image: "/Project_IS208/WareHouse.avif",
   timeline: "6 tháng",
   client: "Giải pháp Logistics Doanh nghiệp",
 }

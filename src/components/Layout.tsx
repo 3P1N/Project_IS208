@@ -16,11 +16,11 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   }
 
   const navItems = [
-    { label: "Trang chủ", path: "/Introduce/home" },
-    { label: "Về chúng tôi", path: "/Introduce/about" },
-    { label: "Dự án", path: "/Introduce/project" },
-    { label: "Tiến độ", path: "/Introduce/timeline" },
-    { label: "Thỏa thuận dự án", path: "/Introduce/project-agreement" },
+    { label: "Trang chủ", path: "/Project_IS208/home" },
+    { label: "Về chúng tôi", path: "/Project_IS208/about" },
+    { label: "Dự án", path: "/Project_IS208/project" },
+    { label: "Tiến độ", path: "/Project_IS208/timeline" },
+    { label: "Thỏa thuận dự án", path: "/Project_IS208/project-agreement" },
   ]
 
   return (
@@ -30,7 +30,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         <header className="w-full h-auto relative">
           <div className="flex w-full flex-row h-auto md:h-[72px] items-center justify-between px-4 md:px-6 py-4 md:py-2.5 bg-basewhite shadow-shadow-nav-shadown">
             <div className="flex items-center">
-              <Link to="/Introduce/home">
+              <Link to="/Project_IS208/home">
                 <h1 className="font-['Rubik_Bubbles',Helvetica] font-normal text-black text-2xl md:text-3xl">PMIT</h1>
               </Link>
             </div>
@@ -64,7 +64,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
             {/* Desktop Actions */}
             <div className="hidden md:flex">
-              <Link to="/Introduce/contact">
+              <Link to="/Project_IS208/contact">
                 <Button className="px-[25px] py-3.5 rounded-[5px] w-full md:w-auto [background:linear-gradient(225deg,rgba(102,117,247,1)_0%,rgba(87,0,123,1)_100%)]">
                   <span className="font-button-text-btn-lg font-[number:var(--button-text-btn-lg-font-weight)] text-graygray-50 text-[length:var(--button-text-btn-lg-font-size)] tracking-[var(--button-text-btn-lg-letter-spacing)] leading-[var(--button-text-btn-lg-line-height)] whitespace-nowrap [font-style:var(--button-text-btn-lg-font-style)]">
                     Liên hệ
@@ -97,7 +97,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
               {/* Mobile Actions */}
               <div className="flex flex-col space-y-4 pt-4 border-t border-gray-200">
-                <Link to="/Introduce/contact" onClick={() => setMobileMenuOpen(false)}>
+                <Link to="/Project_IS208/contact" onClick={() => setMobileMenuOpen(false)}>
                   <Button className="w-full px-[25px] py-3.5 rounded-[5px] [background:linear-gradient(225deg,rgba(102,117,247,1)_0%,rgba(87,0,123,1)_100%)]">
                     <span className="font-button-text-btn-lg font-[number:var(--button-text-btn-lg-font-weight)] text-graygray-50 text-[length:var(--button-text-btn-lg-font-size)] tracking-[var(--button-text-btn-lg-letter-spacing)] leading-[var(--button-text-btn-lg-line-height)] whitespace-nowrap [font-style:var(--button-text-btn-lg-font-style)]">
                       Liên hệ
@@ -117,7 +117,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="space-y-4">
-            <img src="/Introduce/UIT.png" alt="UIT Logo" className="h-15 w-65 mr-3" />
+            <img src="/Project_IS208/UIT.png" alt="UIT Logo" className="h-15 w-65 mr-3" />
               <h3 className="font-['Rubik_Bubbles',Helvetica] text-2xl">PMIT</h3>
               <p className="text-gray-400 text-sm">Xây dựng đội ngũ phát triển đẳng cấp thế giới cho sự thành công kỹ thuật số của bạn.</p>
             </div>

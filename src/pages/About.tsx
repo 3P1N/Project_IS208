@@ -4,28 +4,28 @@ const teamMembers = [
   {
     name: "Thanh Phiên",
     role: ["Fullstack Developer"],
-    avatar: "/Introduce/Saitama.webp",
+    avatar: "/Project_IS208/Saitama.webp",
     description: "Một lập trình viên fullstack nhiệt huyết với nền tảng vững chắc về các công nghệ phía máy chủ, Phiên luôn mong muốn xây dựng các hệ thống mở rộng và hiệu quả, đồng thời không ngừng nâng cao chuyên môn trong lĩnh vực phát triển fullstack.",
     expertise: ["C++", "React", "Java","SQL", "ChatGPT"]
   },
   {
     name: "Tùng Nhân",
     role:  ["Frontend Developer", "Business Analyst", "Tester"],
-    avatar: "/Introduce/Nhan.png",
+    avatar: "/Project_IS208/Nhan.png",
     description: "Một người kinh nghiệm trong thiết kế hệ thống, thành thạo C++ và JavaScript, đồng thời sở hữu nền tảng vững chắc về cơ sở dữ liệu. Với tinh thần ham học hỏi, Nhân luôn chủ động nâng cao kỹ năng và mở rộng kiến thức để phát triển trong lĩnh vực công nghệ.",
     expertise: ["C++", "Python", "Java", "SQL"]
   },
   {
     name: "Đình Phát",
     role: ["Backend Developer", "Data Analyst"],
-    avatar: "/Introduce/Phat.jpg",
+    avatar: "/Project_IS208/Phat.jpg",
     description: "Với nền tảng vững chắc về lập trình, Phát thành thạo C++, Java, Python và các hệ quản trị cơ sở dữ liệu như SQL Server và Oracle. Luôn tìm kiếm cơ hội để mở rộng kiến thức và kỹ năng, Phát không ngừng nâng cao chuyên môn trong lĩnh vực phát triển phần mềm.",
     expertise: ["Database", "Java", "C++", "Python"]
   },
   {
     name: "Thế Phong",
     role: ["Project Manager", "Business Analyst"],
-    avatar: "/Introduce/Phong.png",
+    avatar: "/Project_IS208/Phong.png",
     description: "Phong là một Quản lý Dự án đầy nhiệt huyết với nền tảng vững chắc về lập kế hoạch, điều phối và làm việc nhóm, luôn mong muốn phát triển và tối ưu hóa việc triển khai dự án.",
     expertise: ["Project Planning", "Team Coordination","Workflow Optimization", "Problem-solving"]
   }
