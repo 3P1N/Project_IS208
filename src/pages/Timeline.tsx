@@ -25,8 +25,8 @@ export const TimelinePage = () => {
   // Sample PDF URLs - replace with your actual PDFs
   const pdfUrls = {
     "17-03-2025": {
-      left: "/Introduce/BienBan1.pdf",
-      right: "/Introduce/PhanCong1.pdf",
+      left: "/Project_IS208/BienBan1.pdf",
+      right: "/Project_IS208/PhanCong1.pdf",
     },
     // "2024": {
     //   left: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
