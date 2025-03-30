@@ -7,7 +7,7 @@ const featuredProject = {
     "Một ứng dụng máy tính được thiết kế để giúp doanh nghiệp theo dõi mức tồn kho một cách hiệu quả, quản lý luồng hàng và giám sát các giao dịch liên quan. Hệ thống hỗ trợ nhiều vai trò người dùng và cung cấp các báo cáo chi tiết để tối ưu hóa hoạt động kho hàng.",
   longDescription:
     "Ứng dụng Quản lý Kho của chúng tôi được phát triển với khả năng mở rộng và hiệu suất cao. Hệ thống cung cấp một phương pháp có cấu trúc để theo dõi hàng tồn kho, đảm bảo độ chính xác của số liệu và quy trình kho vận trơn tru. Ứng dụng bao gồm quản lý vai trò người dùng, xác thực bảo mật và các tính năng báo cáo toàn diện để hỗ trợ ra quyết định.",
-  tech: ["Java", "JavaFX", "MySQL", "Spring Boot", "Hibernate", "Git"],
+  tech: ["Java", "Java Swing", "Oracle", "Java JDBC", "Hibernate", "Git"],
   features: [
     "Hỗ trợ vai trò nhiều người dùng",
     "Theo dõi tồn kho theo thời gian thực",
@@ -17,8 +17,8 @@ const featuredProject = {
     "Xác thực bảo mật và kiểm soát truy cập",
   ],
   image: "/Project_IS208/WareHouse.avif",
-  timeline: "6 tháng",
-  client: "Giải pháp Logistics Doanh nghiệp",
+  timeline: "3-4 tháng",
+  client: "Công ty TNHH ABC chuyên về kinh doanh bán lẻ",
 }
 
 export const ProjectPage = () => {
@@ -89,7 +89,7 @@ export const ProjectPage = () => {
           <div className="mt-10 pt-8 border-t border-gray-200">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <p className="text-gray-700">Bạn quan tâm đến một giải pháp tương tự cho doanh nghiệp của mình?</p>
-              <a href="https://www.ecount.com/vn/?S=01&C=11768428526&K=115655127018&keyword=qu%E1%BA%A3n%20l%C3%BD%20kho&matchtype=p&gad_source=1&gclid=Cj0KCQjwv_m-BhC4ARIsAIqNeBvXKwmGa0CtBE3jVa06xYod84TAkp8LhPdab-o6IqNISw0YcgMTMrMaAieDEALw_wcB" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/3P1N/Project_IS216_Java" target="_blank" rel="noopener noreferrer">
                 <button className="px-6 py-3 rounded-[5px] [background:linear-gradient(225deg,rgba(102,117,247,1)_0%,rgba(87,0,123,1)_100%)] text-white font-semibold">
                   Dự án của chúng tôi
                 </button>

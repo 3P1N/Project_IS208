@@ -1,67 +1,98 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ArrowLeft, ArrowRight, Download, FileText, X, ZoomIn, ZoomOut } from "lucide-react"
+import { ArrowLeft, Calendar, CheckCircle, Download, FileText, Link2, List, X } from "lucide-react"
 import { Button } from "../components/ui/button"
 
 export const TimelinePage = () => {
   const [selectedEvent, setSelectedEvent] = useState(null)
   const [isMobile, setIsMobile] = useState(false)
-  const [pdfStates, setPdfStates] = useState({
-    left: {
-      currentPage: 1,
-      numPages: null,
-      scale: 1,
-      failed: false,
-    },
-    right: {
-      currentPage: 1,
-      numPages: null,
-      scale: 1,
-      failed: false,
-    },
-  })
 
-  // Sample PDF URLs - replace with your actual PDFs
-  const pdfUrls = {
-    "17-03-2025": {
-      left: "/Project_IS208/BienBan1.pdf",
-      right: "/Project_IS208/PhanCong1.pdf",
-    },
-    // "2024": {
-    //   left: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-    //   right: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-    // },
-    // "2023": {
-    //   left: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-    //   right: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-    // },
-    // "2022": {
-    //   left: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-    //   right: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-    // },
-  }
-
+  // Enhanced timeline events with only DOCX files
   const timelineEvents = [
     {
       year: "17-03-2025",
-      title: "Phân công ban đầu",
+      title: "Khởi động dự án",
       description: "Đội ngũ dự án đã được phân công vai trò và trách nhiệm ban đầu.",
+      detailedDescription:
+        "Khởi động dự án (17-03-2025)",
+      todoList: [
+        "Họp bắt đầu dự án",
+        "Phân công công việc",
+        "Nghiên cứu, tham khảo các nguồn tài liệu",
+        "Thảo luận, hình thành ý tưởng cho dự án",
+        "Xây dựng SOW, Project Charter",
+        "Định hướng dự án",
+        "Xác định các công nghệ, môi trường sử dụng",
+      ],
+      files: [
+        { name: "Biên bản họp nhóm", type: "pdf", url: "/Project_IS208/BienBan1.pdf" },
+        { name: "Phân công thành viên", type: "pdf", url: "/Project_IS208/PhanCong1.pdf" },
+        { name: "SOW", type: "pdf", url: "/Project_IS208/SOW.pdf" },
+        { name: "Project Charter", type: "pdf", url: "/Project_IS208/Project_Charter.pdf" },
+        { name: "Bảng câu hỏi phỏng vấn khảo sát hiện trạng", type: "pdf", url: "/Project_IS208/Phong_Van.pdf" },
+        { name: "Project Business Case", type: "pdf", url: "/Project_IS208/Project_Business_Case.pdf" },
+      ],
     },
     // {
     //   year: "2024",
     //   title: "Major Milestones",
     //   description: "Reached 1000+ successful project deliveries",
+    //   detailedDescription:
+    //     "This year marks a tremendous achievement for our company as we surpassed 1,000 successful project deliveries. This milestone reflects our team's dedication to excellence, our robust project management methodologies, and our unwavering commitment to client satisfaction. Each project represents a unique challenge overcome and a valuable relationship built with our clients across various industries.",
+    //   todoList: [
+    //     "Compile case studies from landmark projects",
+    //     "Organize client appreciation events",
+    //     "Refine project delivery methodology based on learnings",
+    //     "Implement advanced project analytics dashboard",
+    //     "Launch referral program for existing clients",
+    //   ],
+    //   files: [
+    //     { name: "Project Success Metrics", type: "docx", url: "#" },
+    //     { name: "Client Testimonials Compilation", type: "docx", url: "#" },
+    //     { name: "Delivery Process Improvements", type: "docx", url: "#" },
+    //     { name: "Team Recognition Program", type: "docx", url: "#" },
+    //   ],
     // },
     // {
     //   year: "2023",
     //   title: "Innovation Hub",
     //   description: "Launched our innovation lab for R&D",
+    //   detailedDescription:
+    //     "The launch of our Innovation Hub represents our commitment to staying at the forefront of technology. This dedicated research and development center serves as an incubator for cutting-edge ideas, experimental projects, and technological exploration. By investing in innovation, we're not just preparing for the future—we're actively shaping it. The hub enables our talented team members to explore emerging technologies, develop proofs of concept, and transform innovative ideas into practical solutions for our clients.",
+    //   todoList: [
+    //     "Establish innovation governance framework",
+    //     "Recruit specialized R&D talent",
+    //     "Set up dedicated innovation budget",
+    //     "Create internal innovation challenge program",
+    //     "Develop partnerships with universities and research institutions",
+    //   ],
+    //   files: [
+    //     { name: "Innovation Hub Charter", type: "docx", url: "#" },
+    //     { name: "Research Focus Areas", type: "docx", url: "#" },
+    //     { name: "Emerging Technology Assessment", type: "docx", url: "#" },
+    //     { name: "Innovation Process Flowchart", type: "docx", url: "#" },
+    //   ],
     // },
     // {
     //   year: "2022",
     //   title: "Company Founded",
     //   description: "Started with a team of 5 passionate developers",
+    //   detailedDescription:
+    //     "Our journey began in 2022 with just five passionate developers sharing a vision to create impactful digital solutions. Working from a small office space, our founding team combined their expertise in various technologies to tackle challenging projects for our first clients. Despite limited resources, our commitment to quality and innovation quickly established our reputation in the industry. These humble beginnings laid the foundation for our company culture—one that values creativity, collaboration, and continuous learning.",
+    //   todoList: [
+    //     "Develop company vision and mission statements",
+    //     "Create initial service offerings",
+    //     "Build company website and brand identity",
+    //     "Establish core development processes",
+    //     "Secure first major client contracts",
+    //   ],
+    //   files: [
+    //     { name: "Founding Documents", type: "docx", url: "#" },
+    //     { name: "Original Business Plan", type: "docx", url: "#" },
+    //     { name: "First Client Project Proposal", type: "docx", url: "#" },
+    //     { name: "Company Launch Presentation", type: "docx", url: "#" },
+    //   ],
     // },
   ]
 
@@ -79,229 +110,100 @@ export const TimelinePage = () => {
     }
   }, [])
 
-  // Handle PDF controls
-  const handleZoomIn = (side) => {
-    setPdfStates((prev) => ({
-      ...prev,
-      [side]: {
-        ...prev[side],
-        scale: Math.min(prev[side].scale + 0.2, 2.5),
-      },
-    }))
-  }
+  // Find the selected event object
+  const eventDetails = timelineEvents.find((event) => event.year === selectedEvent)
 
-  const handleZoomOut = (side) => {
-    setPdfStates((prev) => ({
-      ...prev,
-      [side]: {
-        ...prev[side],
-        scale: Math.max(prev[side].scale - 0.2, 0.5),
-      },
-    }))
-  }
-
-  const handlePrevPage = (side) => {
-    setPdfStates((prev) => ({
-      ...prev,
-      [side]: {
-        ...prev[side],
-        currentPage: Math.max(prev[side].currentPage - 1, 1),
-      },
-    }))
-  }
-
-  const handleNextPage = (side) => {
-    setPdfStates((prev) => ({
-      ...prev,
-      [side]: {
-        ...prev[side],
-        currentPage: Math.min(prev[side].currentPage + 1, prev[side].numPages || 1),
-      },
-    }))
-  }
-
-  const handlePdfError = (side) => {
-    setPdfStates((prev) => ({
-      ...prev,
-      [side]: {
-        ...prev[side],
-        failed: true,
-      },
-    }))
-  }
-
-  // PDF Viewer Component
-  const PdfViewer = ({ side, title }) => {
-    const pdfState = pdfStates[side]
-    const pdfUrl = selectedEvent ? pdfUrls[selectedEvent][side] : ""
+  // Event Detail View Component
+  const EventDetailView = ({ event }) => {
+    if (!event) return null
 
     return (
-      <div className="flex-1 min-w-0 mb-6">
-        <h3 className="text-xl font-semibold mb-3">{title}</h3>
-
-        {/* PDF Viewer Controls */}
-        <div className="bg-gray-100 p-3 rounded-t-lg flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
+      <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        {/* Header with year and title */}
+        <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-4 md:p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="flex items-center">
+                <Calendar className="text-white mr-2" size={20} />
+                <span className="text-white font-bold">{event.year}</span>
+              </div>
+              <h2 className="text-white text-2xl font-bold mt-1">{event.title}</h2>
+            </div>
             <Button
-              variant="outline"
+              variant="ghost"
               size="sm"
-              onClick={() => handlePrevPage(side)}
-              disabled={pdfState.currentPage <= 1}
-              className="bg-white h-9 w-9 p-0"
+              onClick={() => setSelectedEvent(null)}
+              className="h-9 w-9 p-0 text-white hover:bg-white/20"
             >
-              <ArrowLeft size={16} />
-              <span className="sr-only">Previous page</span>
-            </Button>
-
-            <span className="text-xs">
-              Page {pdfState.currentPage} of {pdfState.numPages || "?"}
-            </span>
-
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => handleNextPage(side)}
-              disabled={pdfState.currentPage >= (pdfState.numPages || 1)}
-              className="bg-white h-9 w-9 p-0"
-            >
-              <ArrowRight size={16} />
-              <span className="sr-only">Next page</span>
-            </Button>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm" onClick={() => handleZoomOut(side)} className="bg-white h-9 w-9 p-0">
-              <ZoomOut size={16} />
-              <span className="sr-only">Zoom out</span>
-            </Button>
-
-            <span className="text-xs w-12 text-center">{Math.round(pdfState.scale * 100)}%</span>
-
-            <Button variant="outline" size="sm" onClick={() => handleZoomIn(side)} className="bg-white h-9 w-9 p-0">
-              <ZoomIn size={16} />
-              <span className="sr-only">Zoom in</span>
-            </Button>
-
-            <Button
-              variant="outline"
-              size="sm"
-              className="bg-white h-9 px-3"
-              onClick={() => window.open(pdfUrl, "_blank")}
-            >
-              <Download size={16} className="mr-1" />
-              <span className="text-xs">Download</span>
+              {isMobile ? <ArrowLeft size={20} /> : <X size={20} />}
+              <span className="sr-only">Close</span>
             </Button>
           </div>
         </div>
 
-        {/* PDF Viewer */}
-        <div className="border border-gray-300 rounded-b-lg bg-gray-50 flex justify-center overflow-hidden">
-          {!pdfState.failed ? (
-            <div className="relative w-full h-full flex justify-center">
-              <object
-                data={`${pdfUrl}#page=${pdfState.currentPage}&view=FitH`}
-                type="application/pdf"
-                className="w-full h-full"
-                style={{
-                  height: "600px",
-                  transform: `scale(${pdfState.scale})`,
-                  transformOrigin: "center top",
-                }}
-                onError={() => handlePdfError(side)}
-              >
-                <embed
-                  src={`${pdfUrl}#page=${pdfState.currentPage}&view=FitH`}
-                  type="application/pdf"
-                  className="w-full h-full"
-                  style={{
-                    height: "600px",
-                    transform: `scale(${pdfState.scale})`,
-                    transformOrigin: "center top",
-                  }}
-                />
-              </object>
-            </div>
-          ) : (
-            // Fallback if PDF fails to load
-            <div className="w-full flex flex-col items-center p-6 text-center" style={{ height: "400px" }}>
-              <FileText size={48} className="mx-auto mb-4 text-purple-500" />
-              <h3 className="text-lg font-semibold mb-2">Unable to Display PDF</h3>
-              <p className="text-gray-600 mb-6 max-w-md">
-                We're having trouble displaying this PDF in your browser. You can still access the document using one of
-                the options below:
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button
-                  onClick={() => window.open(pdfUrl, "_blank")}
-                  className="[background:linear-gradient(225deg,rgba(102,117,247,1)_0%,rgba(87,0,123,1)_100%)]"
+        {/* Content */}
+        <div className="p-4 md:p-6">
+          {/* Description Section */}
+          <section className="mb-6">
+            <h3 className="text-xl font-semibold mb-3 text-gray-800">Description</h3>
+            <p className="text-gray-600 leading-relaxed">{event.detailedDescription}</p>
+          </section>
+
+          {/* To-Do List Section */}
+          <section className="mb-6">
+            <h3 className="text-xl font-semibold mb-3 text-gray-800 flex items-center">
+              <List className="mr-2 text-purple-500" size={20} />
+              To-Do List
+            </h3>
+            <ul className="space-y-2">
+              {event.todoList.map((item, index) => (
+                <li key={index} className="flex items-start">
+                  <CheckCircle className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                  <span className="text-gray-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {/* Files Section */}
+          <section>
+            <h3 className="text-xl font-semibold mb-3 text-gray-800 flex items-center">
+              <Link2 className="mr-2 text-purple-500" size={20} />
+              Word Documents
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {event.files.map((file, index) => (
+                <a
+                  key={index}
+                  href={file.url}
+                  className="flex items-center p-3 border border-gray-200 rounded-md hover:bg-gray-50 transition-colors group"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <FileText size={16} className="mr-2" />
-                  Open in New Tab
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={() => {
-                    const link = document.createElement("a")
-                    link.href = pdfUrl
-                    link.download = `document-${side}.pdf`
-                    document.body.appendChild(link)
-                    link.click()
-                    document.body.removeChild(link)
-                  }}
-                >
-                  <Download size={16} className="mr-2" />
-                  Download PDF
-                </Button>
-              </div>
+                  <FileText className="text-blue-500" size={18} />
+                  <span className="ml-2 text-gray-700 group-hover:text-purple-600">{file.name}</span>
+                  <Download className="ml-auto text-gray-400 group-hover:text-purple-600" size={16} />
+                </a>
+              ))}
             </div>
-          )}
+          </section>
         </div>
       </div>
     )
   }
 
-  // Find the selected event object
-  const eventDetails = timelineEvents.find((event) => event.year === selectedEvent)
-
   return (
     <div className="px-4 md:px-[148px] py-12">
       <h1 className="text-4xl font-bold mb-12">Lộ trình Dự án</h1>
 
-      {/* Mobile View: Show PDFs directly when an event is selected */}
+      {/* Mobile View: Show event details directly when an event is selected */}
       {isMobile && selectedEvent && (
         <div className="mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-2xl font-bold flex items-center">
-              <Button variant="ghost" size="sm" onClick={() => setSelectedEvent(null)} className="mr-2 h-8 w-8 p-0">
-                <ArrowLeft size={18} />
-                <span className="sr-only">Back</span>
-              </Button>
-              Documents from {selectedEvent}
-            </h2>
-          </div>
-
-          <div className="bg-white p-4 rounded-lg shadow-lg mb-6">
-            <span className="text-purple-500 font-bold text-xl mb-1 block">{eventDetails?.year}</span>
-            <h3 className="text-xl font-semibold mb-2">{eventDetails?.title}</h3>
-            <p className="text-gray-600 mb-4">{eventDetails?.description}</p>
-          </div>
-
-          <PdfViewer side="left" title="Biên bản" />
-          <PdfViewer side="right" title="Phân công" />
-
-          {/* Mobile PDF Viewing Tips */}
-          <div className="mt-4 bg-blue-50 border border-blue-200 rounded-lg p-4 text-sm text-blue-800">
-            <h3 className="font-semibold mb-1">Viewing Tips:</h3>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Rotate your device to landscape for a better view</li>
-              <li>Use the controls above to navigate between pages</li>
-              <li>If the PDF doesn't display properly, try the download option</li>
-            </ul>
-          </div>
+          <EventDetailView event={eventDetails} />
         </div>
       )}
 
-      {/* Hide timeline on mobile when PDFs are shown */}
+      {/* Hide timeline on mobile when event details are shown */}
       {!(isMobile && selectedEvent) && (
         <div className="relative">
           {/* Timeline line */}
@@ -326,7 +228,10 @@ export const TimelinePage = () => {
                     <span className="text-purple-500 font-bold text-xl mb-2 block">{event.year}</span>
                     <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
                     <p className="text-gray-600">{event.description}</p>
-                    <div className="mt-4 text-purple-600 font-medium">Click để xem tài liệu</div>
+                    <div className="mt-4 text-purple-600 font-medium flex items-center">
+                      <FileText size={16} className="mr-1" />
+                      Click to view details
+                    </div>
                   </div>
                 </div>
 
@@ -338,24 +243,11 @@ export const TimelinePage = () => {
         </div>
       )}
 
-      {/* Desktop: PDF Viewer Modal */}
+      {/* Desktop: Event Details Modal */}
       {!isMobile && selectedEvent && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg w-full max-w-6xl max-h-[90vh] overflow-auto">
-            <div className="p-4 border-b border-gray-200 flex justify-between items-center">
-              <h2 className="text-2xl font-bold">Documents from {selectedEvent}</h2>
-              <Button variant="ghost" size="sm" onClick={() => setSelectedEvent(null)} className="h-9 w-9 p-0">
-                <X size={20} />
-                <span className="sr-only">Close</span>
-              </Button>
-            </div>
-
-            <div className="p-6">
-              <div className="flex flex-row space-x-6">
-                <PdfViewer side="left" title="Biên bản" />
-                <PdfViewer side="right" title="Phân công" />
-              </div>
-            </div>
+          <div className="bg-white rounded-lg w-full max-w-4xl max-h-[90vh] overflow-auto">
+            <EventDetailView event={eventDetails} />
           </div>
         </div>
       )}

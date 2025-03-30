@@ -4,14 +4,14 @@ const teamMembers = [
   {
     name: "Thanh Phiên",
     role: ["Fullstack Developer"],
-    avatar: "/Project_IS208/Saitama.webp",
+    avatar: "/Project_IS208/Phien.jpg",
     description: "Một lập trình viên fullstack nhiệt huyết với nền tảng vững chắc về các công nghệ phía máy chủ, Phiên luôn mong muốn xây dựng các hệ thống mở rộng và hiệu quả, đồng thời không ngừng nâng cao chuyên môn trong lĩnh vực phát triển fullstack.",
     expertise: ["C++", "React", "Java","SQL", "ChatGPT"]
   },
   {
     name: "Tùng Nhân",
     role:  ["Frontend Developer", "Business Analyst", "Tester"],
-    avatar: "/Project_IS208/Nhan.png",
+    avatar: "/Project_IS208/Nhan1.jpg",
     description: "Một người kinh nghiệm trong thiết kế hệ thống, thành thạo C++ và JavaScript, đồng thời sở hữu nền tảng vững chắc về cơ sở dữ liệu. Với tinh thần ham học hỏi, Nhân luôn chủ động nâng cao kỹ năng và mở rộng kiến thức để phát triển trong lĩnh vực công nghệ.",
     expertise: ["C++", "Python", "Java", "SQL"]
   },

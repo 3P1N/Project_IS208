@@ -5,25 +5,25 @@ import { Mail } from "lucide-react"
 const teamMembers = [
   {
     name: "Phạm Văn Thanh Phiên",
-    position: "CEO & Founder",
+    position: "23521158",
     email: "23521158@gm.uit.edu.vn",
-    avatar: "/Project_IS208/Saitama.webp",
+    avatar: "/Project_IS208/Phien.jpg",
   },
   {
     name: "Ngô Tùng Nhân",
-    position: "CTO",
+    position: "23521077",
     email: "23521077@gm.uit.edu.vn",
-    avatar: "/Project_IS208/Nhan.png",
+    avatar: "/Project_IS208/Nhan1.jpg",
   },
   {
     name: "Nguyễn Đình Phát",
-    position: "Project Manager",
+    position: "23521144",
     email: "23521144@gm.uit.edu.vn",
     avatar: "/Project_IS208/Phat.jpg?height=80&width=80",
   },
   {
     name: "Trần Thế Phong",
-    position: "Lead Developer",
+    position: "23521175",
     email: "23521175@gm.uit.edu.vn",
     avatar: "/Project_IS208/Phong.png?height=80&width=80",
   },

@@ -10,13 +10,13 @@ export const HomePage = () => {
         <div className="flex flex-col items-start gap-7">
           <div className="space-y-4">
             <h2 className="text-3xl md:text-5xl font-bold text-center md:text-left">
-              <span className="text-black">Sản phẩm </span>
-              <span className="text-purple-500">Tuyệt vời</span>
-              <span className="text-black"> được</span>
+              <span className="text-black">Great </span>
+              <span className="text-purple-500">Product</span>
+              <span className="text-black"> is</span>
             </h2>
             <h2 className="text-3xl md:text-5xl font-bold text-center md:text-left">
-              <span className="text-black">xây dựng bởi </span>
-              <span className="text-purple-500">đội ngũ xuất sắc</span>
+              <span className="text-black">built by great </span>
+              <span className="text-purple-500">team</span>
             </h2>
           </div>
 
